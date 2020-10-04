@@ -40,6 +40,21 @@
         alert('何も入力されていないためスキップします');
       }
 
+      const commands = ['確認','追加','削除','終了'];
+        
+      const action = prompt(`${commands}の4つのいずれかを入力してください`);
+
+      if (action === commands[0]){
+           console.log(`${commands[0]}が入力されました`);
+             }else if(action === commands[1]){
+               console.log(`${commands[1]}が入力されました`);
+             }else if(action === commands[2]){
+               console.log(`${commands[2]}が入力されました`);
+             }else if(action === commands[3]){
+              console.log(`${commands[3]}が入力されました`);
+             }else{
+               console.log('何も押されませんでした');
+             }
 
 
     //   const todos = ['掃除', '買い物', '散歩'];     
