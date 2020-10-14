@@ -12,51 +12,48 @@
   <body>
     <h1>FizzBuzz問題</h1>
     <form>
-      FizzNum:<input type = 'text' placeholder = "整数を入力してください" id="input_num1">
+      FizzNum:<input type = "text" placeholder = "整数を入力してください" id= "input_num1">
       <br>
-      BuzzNum:<input type = 'text' placeholder = "整数を入力してください" id="input_num2">
+      BuzzNum:<input type = "text" placeholder = "整数を入力してください" id= "input_num2">
       <br> 
     </form>
-    <button>run</button>
-    <p  >【出力】</p>
-      
-      <p id = 'area'> </p>
-        <ul class = 'list'>
-
+      <button>run</button>
+        <p>【出力】</p>
+          <p id = "area"> </p>
+          <ul class = "list">
       </ul> 
 
   <script>
-      document.querySelector('button').addEventListener('click',()=>{
+    document.querySelector('button').addEventListener('click',() => {
 
-        const text = document.getElementById('input_num1').value;
-        const text2 = document.getElementById('input_num2').value;
-        const p = document.createElement('p');
-        const errStr = document.getElementById('area');
+    const text = document.getElementById('input_num1').value;
+    const text2 = document.getElementById('input_num2').value;
+    const p = document.createElement('p');
+    const errStr = document.getElementById('area');
 
-         if(Number.isInteger(Number(text)) === false || Number.isInteger(Number(text2)) === false || text ==='' || text2 === ''){
-      
-             p.textContent = `整数を入力してください`;
-             errStr.appendChild(p);
+    if(Number.isInteger(Number(text)) === false || Number.isInteger(Number(text2)) === false || text ==='' || text2 === ''){
+      p.textContent = `整数を入力してください`;
+        errStr.appendChild(p);
           }else{
-          for(let i= 1; i<100; i++){
+          for(let i = 1; i < 100; i++){
              if(i%text===0 && i%text2===0){
                const li3 = document.createElement('li');
                  li3.textContent += `FizzBuzz ${i}`;
                    document.querySelector('ul').appendChild(li3);
-          }else if(i%text===0){
-            const li = document.createElement('li');
-              li.textContent += `Fizz ${i}`;
-                document.querySelector('ul').appendChild(li);
-          }else if(i%text2===0){
-            const li2 = document.createElement('li');
-              li2.textContent += `Buzz ${i}`;
-                document.querySelector('ul').appendChild(li2);
-          }else{
-            continue;
+                     }else if(i % text === 0){
+                       const li = document.createElement('li');
+                         li.textContent += `Fizz ${i}`;
+                          document.querySelector('ul').appendChild(li);
+                        }else if(i % text2 === 0){
+                      const li2 = document.createElement('li');
+                    li2.textContent += `Buzz ${i}`;
+                  document.querySelector('ul').appendChild(li2);
+                }else{
+              continue;
+            }
           }
-       }
-    }
-});
+        }
+      });
   </script>
   </body>
 </html>
