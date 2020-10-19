@@ -2,77 +2,38 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-  <title>JS課題①-1</title>
+  <title>JS課題①-3</title>
   </head>
   <body>
 
     <script>
-      // let str = ['掃除','買い物','散歩'];
-      // let a = '\n'
-      // console.log(`
-      // ===========
-      // 現在のタスク一覧
-      // ===========
-      // ${str}
-      // `);
-//       let ary =  new Array();
-//     ary.push('maichi');
-//     ary.push('maya');
-//     ary.push('yuki');
-    
-//     let a = "\n"
-//     let b = ary.join( a ); 
-  
-//     console.log(`
-// ===================
-// 現在のタスク一覧
-// ===================
-// ${ b } 
-// `);
+      const todos = ['掃除', '買い物', '散歩'];     
 
+      const showTodos = () => {
+        console.log('========================');
+        console.log('現在持っているのタスク一覧');
+        console.log('========================');
 
+      if (todos.length > 0) {
+        todos.forEach((todo, index) => {
+          console.log(index + ' : ' + todo);
+       });
+      } else {
+        console.log('タスク無し');
+      }
+     }
 
-//インプットボックスの表示＆入力文字をstrに代入
+    showTodos();
 
-//strが空の場合の処理
-//if (task == "") task = "名無しの権兵衛";
-
-//名前を表示する
-// console.log(task)
-// console.log(`
-// 現在持っているタスク一覧
-// `)
-
-// const arr = ['掃除', '買い物', '散歩'];
-// arr.forEach((elem, index) => {
-    
-//     console.log(`${index}: ${elem}`);
-// });
-
-const arr = ['掃除', '買い物', '散歩'];
-
-// for( let i = 0; i < arr.length ; i++){
-//   console.log(`${i}:${arr[i]}`);
-// }
-// let task = prompt("タスクを入力してください");
-// console.log(task);
-let flag = "true"
-
-do{
-  console.log("========================");
-  console.log("現在持っているタスク一覧");
-  console.log("========================");
-  for( let i = 0; i < arr.length ; i++){
-  console.log(`${i}:${arr[i]}`);
-}
-}
-while(flag){
-if( prompt("タスクを入力してください") !== ""){
-alert("追加しました");
-}else{
-alert("「確認,追加,削除,終了」の4つのいずれかを入力してください");
-}
-}
+    const todo = prompt('タスクを入力してください');
+      if (todo) {
+        todos.push(todo);
+          alert('新しいタスクを追加しました。');
+            showTodos();
+      } else {
+        alert('何も入力されていないためスキップします');
+      }
+      
     </script>
   </body>
 </html>
